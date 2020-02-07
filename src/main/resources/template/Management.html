@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <title>文档导出系统</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/CSS/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>欢迎使用本系统</h1>
+        <p class="lead">本系统支持根据word模板的格式将数据库中的信息导出填充到模板上</p>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <h2>导入模板</h2>
+            <p>支持的模板格式为xml或者是ftl格式，请将word模板另存为这两种格式</p>
+            <p><a class="btn btn-primary" th:href="@{/Model}" role="button">导入 &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <h2>导入数据库驱动文件</h2>
+            <p>本系统默认支持mysql,sql server,oracle数据库，若为其它数据库请导入相关的驱动文件</p>
+            <p><a class="btn btn-primary" th:href="@{/Driver}" role="button">导入 &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <h2>文档导出</h2>
+            <p>按照模板格式将数据库中的内容填充到模板文件上</p>
+            <p><a class="btn btn-primary" th:href="@{/Export}" role="button">导出 &raquo;</a></p>
+        </div>
+    </div>
+
+    <!-- Site footer -->
+    <footer class="footer">
+        <p>&copy; 2019 Company, Inc.</p>
+    </footer>
+
+</div> <!-- /container -->
+</body>
+</html>

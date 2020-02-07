@@ -14,7 +14,11 @@ public class LoginController {
     @RequestMapping("/Login")
     public String Login(@RequestParam("UserName")String UserName,
                         @RequestParam("Password")String Password){
-
-        return "success";
+        if(UserName.equals("1")){
+            if (Password.equals("1")){
+                return "Management";
+            }
+        }
+        return "error";
     }
 }
