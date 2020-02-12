@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * 该controller负责控制页面间的相互跳转
+ */
 @Controller
 public class LoginController {
 
@@ -20,5 +23,20 @@ public class LoginController {
             }
         }
         return "error";
+    }
+
+    @RequestMapping("/Model")
+    public String Model(){
+        return "Model";
+    }
+
+    @RequestMapping("/Driver")
+    public String Driver(){
+        return "Driver";
+    }
+
+    @RequestMapping("/Export")
+    public String Export(){
+        return "Export";
     }
 }
