@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.List;
 
 @ComponentScan
-public class MysqlUtil {
+public class SqlUtil {
     @Autowired
     private Config config;
     @Autowired
