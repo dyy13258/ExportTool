@@ -6,6 +6,21 @@
     <link rel="stylesheet" type="text/css" th:href="@{/static/CSS/bootstrap.min.css}">
 </head>
 <body>
-
+<form class="form-signin" th:action="@{/ToExport}">
+    <h2 class="form-signin-heading">文档导出</h2>
+    <label class="sr-only">驱动</label>
+    <input type="text" class="form-control" name="Driver">
+    <label class="sr-only">数据库地址</label>
+    <input type="text" class="form-control" name="URL">
+    <label class="sr-only">数据库名称</label>
+    <input type="text" class="form-control" name="Store">
+    <label class="sr-only">用户名</label>
+    <input type="text" class="form-control" name="UserName">
+    <label class="sr-only">密码</label>
+    <input type="password" class="form-control" name="Password">
+    <label class="sr-only">表名称</label>
+    <input type="text" class="form-control" name="Topic">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">导出</button>
+</form>
 </body>
 </html>

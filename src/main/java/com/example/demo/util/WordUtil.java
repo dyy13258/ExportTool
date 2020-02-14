@@ -17,6 +17,7 @@ import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableCell;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  *
@@ -32,7 +33,7 @@ import org.apache.poi.xwpf.usermodel.XWPFTableRow;
  * 两边页边距很窄，需要在word里设置页边距窄一点，而不是直接拖动表格边框来实现。
  *
  */
-
+@ComponentScan
 public class WordUtil {
 
     private XWPFDocument document;

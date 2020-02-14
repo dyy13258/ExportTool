@@ -11,16 +11,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class UploadController {
     @Autowired
     UploadService uploadService;
-
-    /**
-     * 访问首页
-     * @return
-     */
-    @GetMapping("/")
-    public String index() {
-        return "upload";
-    }
-
     /**
      * 上传操作
      * @param file
