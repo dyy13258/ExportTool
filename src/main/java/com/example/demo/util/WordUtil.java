@@ -175,12 +175,6 @@ public class WordUtil {
     }
 
 
-
-
-
-
-
-
     /**
      * 根据 模板表格 和 数据list 在word文档末尾生成表格
      * @author Juveniless
@@ -340,7 +334,7 @@ public class WordUtil {
             if (beginRunIndex == endRunIndex) {
                 // {**}在一个run标签内
                 XWPFRun beginRun = runs.get(beginRunIndex);
-                String beginRunText = beginRun.text();
+                String beginRunText = beginRun.toString();
 
                 int beginIndex = beginRunText.indexOf("{");
                 int endIndex = beginRunText.indexOf("}");
@@ -371,7 +365,7 @@ public class WordUtil {
 
                 //先处理起始run标签,取得第一个{key}值
                 XWPFRun beginRun = runs.get(beginRunIndex);
-                String beginRunText = beginRun.text();
+                String beginRunText = beginRun.toString();
                 int beginIndex = beginRunText.indexOf("{");
                 if (beginRunText.length()>1  ) {
                     key.append(beginRunText.substring(beginIndex+1));
@@ -380,14 +374,14 @@ public class WordUtil {
                 //处理中间的run
                 for (int i = beginRunIndex + 1; i < endRunIndex; i++) {
                     XWPFRun run = runs.get(i);
-                    String runText = run.text();
+                    String runText = run.toString();
                     key.append(runText);
                     removeRunList.add(i);
                 }
 
                 // 获取endRun中的key值
                 XWPFRun endRun = runs.get(endRunIndex);
-                String endRunText = endRun.text();
+                String endRunText = endRun.toString();
                 int endIndex = endRunText.indexOf("}");
                 //run中**}或者**}**
                 if (endRunText.length()>1 && endIndex!=0) {
@@ -550,7 +544,7 @@ public class WordUtil {
     private void CopyRun(XWPFRun newRun, XWPFRun templateRun) {
         newRun.getCTR().setRPr(templateRun.getCTR().getRPr());
         // 设置文本
-        newRun.setText(templateRun.text());
+        newRun.setText(templateRun.toString());
 
 
     }

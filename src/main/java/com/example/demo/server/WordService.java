@@ -1,7 +1,6 @@
 package com.example.demo.server;
 
 import com.example.demo.util.WordUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>文档导出系统</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/static/CSS/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/CSS/bootstrap.min.css}">
 </head>
 <body>
 <form class="form-signin" th:action="@{/ToExport}">
@@ -20,6 +20,8 @@
     <input type="password" class="form-control" name="Password">
     <label class="sr-only">表名称</label>
     <input type="text" class="form-control" name="Topic">
+    <label class="sr-only">导出路径</label>
+    <input type="text" class="form-control" name="ExportURL">
     <button class="btn btn-lg btn-primary btn-block" type="submit">导出</button>
 </form>
 </body>

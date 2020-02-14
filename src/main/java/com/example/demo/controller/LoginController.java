@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 该controller负责控制页面间的相互跳转
@@ -10,11 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 
-    @RequestMapping("/")
+    @RequestMapping("/Login")
     public String index(){
         return "Login";
     }
-    @RequestMapping("/Login")
+
+    @RequestMapping("/ToLogin")
     public String Login(@RequestParam("UserName")String UserName,
                         @RequestParam("Password")String Password){
         if(UserName.equals("1")){
