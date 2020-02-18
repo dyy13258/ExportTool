@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,7 +17,7 @@ public class LoginController {
         return "Login";
     }
 
-    @RequestMapping("/ToLogin")
+    @RequestMapping(value = "/ToLogin",method = RequestMethod.POST)
     public String Login(@RequestParam("UserName")String UserName,
                         @RequestParam("Password")String Password){
         if(UserName.equals("1")){

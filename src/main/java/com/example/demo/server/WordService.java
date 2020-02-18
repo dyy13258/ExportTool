@@ -13,11 +13,9 @@ import java.util.Map;
 public class WordService {
 
 
-    public void Export() throws IOException {
+    public void Export(String ModelURL,String ExportURL) throws IOException {
         Map<String, Object> wordDataMap = new HashMap<String, Object>();// 存储报表全部数据
         Map<String, Object> parametersMap = new HashMap<String, Object>();// 存储报表中不循环的数据
-
-
 
         List<Map<String, Object>> table1 = new ArrayList<Map<String, Object>>();
         Map<String, Object> map1=new HashMap<>();
@@ -40,8 +38,6 @@ public class WordService {
         table1.add(map3);
 
 
-
-
         List<Map<String, Object>> table2 = new ArrayList<Map<String, Object>>();
         Map<String, Object> map4=new HashMap<>();
         map4.put("name", "tom");
@@ -61,7 +57,6 @@ public class WordService {
         table2.add(map4);
         table2.add(map5);
         table2.add(map6);
-
 
 
         parametersMap.put("userName", "JUVENILESS");

@@ -18,7 +18,7 @@ public class UploadService {
 
     @Autowired
     public UploadService() {
-        this.rootLocation = Paths.get("D:/");
+        this.rootLocation = Paths.get("/home/dyy/MyProjects/Export/src/main/resources/doc/");
     }
 
 
