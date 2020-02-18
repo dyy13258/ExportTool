@@ -32,7 +32,7 @@ public class UploadDriverController {
         if (!file.isEmpty()) {
 
             // 构建上传文件的存放路径
-            String path = request.getServletContext().getRealPath("/home/dyy/MyProjects/Export/src/main/resources/Driver");
+            String path = "/home/dyy/MyProjects/Export/src/main/resources/Driver";
             System.out.println("path = " + path);
 
             // 获取上传的文件名称，并结合存放路径，构建新的文件名称
