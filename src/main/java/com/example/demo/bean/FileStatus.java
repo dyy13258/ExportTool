@@ -1,8 +1,10 @@
 package com.example.demo.bean;
 
+import org.springframework.context.annotation.ComponentScan;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
+@ComponentScan
 public class FileStatus {
     /*文件名字*/
     private String fileName;
