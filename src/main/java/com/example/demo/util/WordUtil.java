@@ -22,11 +22,6 @@ import org.springframework.context.annotation.ComponentScan;
 /**
  *
  * 对docx文件中的文本及表格中的内容进行替换 --模板仅支持对 {key} 标签的替换
- *
- * @ClassName: WordTemplate
- * @Description: TODO(!!!使用word2013 docx文件)
- * @author Juveniless
- * @date: 2017年11月27日 下午3:25:56
  * <br>(1)word模板注意页边距的问题，存在问题：比如页边距默认为3cm，画表格时，仍然可以通过
  * 拖拽，把表格边框拖动到看起来就像页边距只有1cm的样子，但是实际上此时页边距还是3cm，生成的
  * word报表的页边距还是会按照3cm来生成。解决办法，在word文件里，设置好页边距，如果需要表格
@@ -46,16 +41,7 @@ public class WordUtil {
         this.document = document;
     }
 
-    /**
-     * 初始化模板内容
-     *
-     * @author Juveniless
-     * @date 2017年11月27日 下午3:59:22
-     * @param inputStream
-     *            模板的读取流(docx文件)
-     * @throws IOException
-     *
-     */
+
     public WordUtil(InputStream inputStream) throws IOException {
         document = new XWPFDocument(inputStream);
     }
@@ -80,10 +66,6 @@ public class WordUtil {
      * 对于需要替换的普通标签数据标签（不需要循环）-----必须在dataMap中存储一个key为parametersMap的map，
      * 来存储这些不需要循环生成的数据，比如：表头信息，日期，制表人等。 <br><br>
      * 对于需要循环生成的表格数据------key自定义，value为 --ArrayList&lt;Map&lt;String, String>>
-     * @author Juveniless
-     * @date 2017年11月27日 下午3:29:27
-     * @param dataMap
-     *
      */
     public void replaceDocument(Map<String, Object> dataMap) {
 
@@ -177,8 +159,6 @@ public class WordUtil {
 
     /**
      * 根据 模板表格 和 数据list 在word文档末尾生成表格
-     * @author Juveniless
-     * @date 2017年12月6日 上午10:12:05
      * @param templateTable 模板表格
      * @param list   循环数据集
      * @param parametersMap  不循环数据集
@@ -269,9 +249,6 @@ public class WordUtil {
 
     /**
      * 根据 模板段落 和 数据 在文档末尾生成段落
-     *
-     * @author Juveniless
-     * @date 2017年11月27日 上午11:49:42
      * @param templateParagraph
      *            模板段落
      * @param list
@@ -312,8 +289,6 @@ public class WordUtil {
 
     /**
      * 根据map替换段落元素内的{**}标签
-     * @author Juveniless
-     * @date 2017年12月4日 下午3:09:00
      * @param xWPFParagraph
      * @param parametersMap
      *
@@ -482,9 +457,6 @@ public class WordUtil {
 
     /**
      * 复制单元格XWPFTableCell格式
-     *
-     * @author Juveniless
-     * @date 2017年11月27日 下午3:41:02
      * @param newTableCell
      *            新创建的的单元格
      * @param templateTableCell
@@ -533,8 +505,6 @@ public class WordUtil {
 
     /**
      * 复制文本节点run
-     * @author Juveniless
-     * @date 2017年11月27日 下午3:47:17
      * @param newRun
      *            新创建的的文本节点
      * @param templateRun
@@ -554,9 +524,6 @@ public class WordUtil {
 
     /**
      * 根据参数parametersMap对表格的一行进行标签的替换
-     *
-     * @author Juveniless
-     * @date 2017年11月23日 下午2:09:24
      * @param tableRow
      *            表格行
      * @param parametersMap
@@ -582,8 +549,6 @@ public class WordUtil {
 
     /**
      * 根据map替换表格中的{key}标签
-     * @author Juveniless
-     * @date 2017年12月4日 下午2:47:36
      * @param xwpfTable
      * @param parametersMap
      *
